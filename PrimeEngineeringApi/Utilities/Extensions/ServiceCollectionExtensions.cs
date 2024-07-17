@@ -1,6 +1,11 @@
 ﻿using FluentValidation;
 using MediatR;
 using PrimeEngineeringApi.Handlers.Accounts.Login;
+using PrimeEngineeringApi.Handlers.Accounts.RegisterEmployee;
+using PrimeEngineeringApi.Handlers.Employees.AddContributor;
+using PrimeEngineeringApi.Handlers.Employees.CreateTask;
+using PrimeEngineeringApi.Handlers.Employees.EditTask;
+using PrimeEngineeringApi.Handlers.Employees.MarkFinished;
 using PrimeEngineeringApi.Middleware;
 using PrimeEngineeringApi.Services;
 
@@ -12,6 +17,11 @@ namespace PrimeEngineeringApi.Utilities.Extensions
         {
             services.AddScoped(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
             services.AddTransient<IValidator<LoginQuery>, LoginQueryValidator>();
+            services.AddTransient<IValidator<RegisterEmployeeQuery>, RegisterEmployeeQueryValidator>();
+            services.AddTransient<IValidator<AddContributorQuery>, AddContributorQueryValidator>();
+            services.AddTransient<IValidator<CreateTaskQuery>, CreateTaskQueryvalidator>();
+            services.AddTransient<IValidator<EditTaskQuery>, EditTaskQueryValidator>();
+            services.AddTransient<IValidator<MarkFinishedQuery>, MarkFinishedQueryValidator>();
 
             return services;
         }

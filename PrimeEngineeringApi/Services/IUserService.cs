@@ -4,8 +4,9 @@ namespace PrimeEngineeringApi.Services
 {
     public interface IUserService
     {
-        public Task<AppUser> GetCurrentUserAsync();
-
         public int GetCurrentUserId();
+
+        public Task<Employee> GetCurrentEmployee();
+        public Task<Employee> GetEmployeeById(int id);
     }
 }

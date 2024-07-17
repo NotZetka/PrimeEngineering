@@ -15,11 +15,9 @@ namespace PrimeEngineeringApi.Services
             _context = context;
         }
 
-        public async Task<AppUser> GetCurrentUserAsync()
+        public async Task<Employee> GetCurrentEmployee()
         {
-            var userid = GetCurrentUserId();
-
-            return await _context.Users.FirstOrDefaultAsync(x => x.Id == userid);
+            return await GetEmployeeById(GetCurrentUserId());
         }
 
         public int GetCurrentUserId()
@@ -27,6 +25,13 @@ namespace PrimeEngineeringApi.Services
             var user = _httpContext.User;
 
             return user.GetUserId();
+        }
+
+        public async Task<Employee> GetEmployeeById(int id)
+        {
+            return await _context.Employees
+                .Include(x => x.Tasks)
+                .FirstOrDefaultAsync(x => x.Id == id);
         }
     }
 }

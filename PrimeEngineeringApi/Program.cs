@@ -23,6 +23,7 @@ namespace PrimeEngineeringApi
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
             builder.Services.AddHttpContextAccessor();
+            builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
             builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
                 {

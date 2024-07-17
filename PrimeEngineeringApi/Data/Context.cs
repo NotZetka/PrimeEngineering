@@ -10,7 +10,7 @@ namespace PrimeEngineeringApi.Data
         }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Menager> Menagers { get; set; }
-        public DbSet<Task> Tasks { get; set; }
+        public DbSet<EmployeeTask> Tasks { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder builder)
@@ -21,6 +21,10 @@ namespace PrimeEngineeringApi.Data
                 .HasMany(u => u.Employees)
                 .WithOne(e => e.Menager)
                 .OnDelete(DeleteBehavior.Restrict);
+
+            builder.Entity<Employee>()
+                .HasMany(x => x.Tasks)
+                .WithMany(x => x.Employees);
         }
     }
 }

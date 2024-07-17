@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using PrimeEngineeringApi.Data;
 using PrimeEngineeringApi.Data.Repositories.Accounts;
+using PrimeEngineeringApi.Data.Repositories.Employees;
 
 namespace PrimeEngineeringApi.Utilities.Extensions
 {
@@ -46,6 +47,7 @@ namespace PrimeEngineeringApi.Utilities.Extensions
         public static IServiceCollection AddRepositories(this IServiceCollection services)
         {
             services.AddScoped<IAccountsRepository, AccountsRepository>();
+            services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 
             return services;
         }

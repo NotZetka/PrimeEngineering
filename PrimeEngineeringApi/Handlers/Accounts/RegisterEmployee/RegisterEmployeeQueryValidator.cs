@@ -2,9 +2,9 @@
 
 namespace PrimeEngineeringApi.Handlers.Accounts.RegisterEmployee
 {
-    public class RegisterQueryEmployeeValidator : AbstractValidator<RegisterEmployeeQuery>
+    public class RegisterEmployeeQueryValidator : AbstractValidator<RegisterEmployeeQuery>
     {
-        public RegisterQueryEmployeeValidator()
+        public RegisterEmployeeQueryValidator()
         {
             RuleFor(x => x.Email).NotEmpty().NotNull().EmailAddress();
             RuleFor(x => x.UserName).NotEmpty().NotNull();

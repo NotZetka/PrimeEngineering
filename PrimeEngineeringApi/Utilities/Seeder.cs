@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using PrimeEngineeringApi.Data;
 
 namespace PrimeEngineeringApi.Utilities
@@ -8,6 +9,7 @@ namespace PrimeEngineeringApi.Utilities
         public static async void SeedUsers(this IApplicationBuilder app)
         {
             var _userManager = app.ApplicationServices.CreateScope().ServiceProvider.GetRequiredService<UserManager<AppUser>>();
+            var _context = app.ApplicationServices.CreateScope().ServiceProvider.GetRequiredService<DataContext>();
 
             Menager menager = null;
 
@@ -35,7 +37,45 @@ namespace PrimeEngineeringApi.Utilities
                 await _userManager.AddToRoleAsync(employee, "Employee");
                 {
                 };
+            }
 
+            Employee employee2 = null;
+            if (await _userManager.FindByNameAsync("Employee2") == null)
+            {
+                employee2 = new()
+                {
+                    Menager = menager,
+                    UserName = "Employee2",
+                    Email = "Employee2@123.pl"
+                };
+                await _userManager.CreateAsync(employee2, "Test.123");
+                await _userManager.AddToRoleAsync(employee2, "Employee");
+                {
+                };
+            }
+
+            if (_context.Tasks.Count() == 0)
+            {
+                employee = _context.Employees.Include(x => x.Tasks).FirstOrDefault(x => x.UserName == "Employee1");
+                employee2 = _context.Employees.Include(x => x.Tasks).FirstOrDefault(x => x.UserName == "Employee2");
+
+                employee.Tasks.Add(new()
+                {
+                    AuthorId = employee.Id,
+                    Header = "Task1",
+                    Description = "Task1 description",
+                    Priority = Priority.Medium,
+                    Employees = new List<Employee>() { employee2 }
+                });
+                employee2.Tasks.Add(new()
+                {
+                    AuthorId = employee2.Id,
+                    Header = "Task2",
+                    Description = "Task2 description",
+                    Priority = Priority.Medium
+                });
+
+                await _context.SaveChangesAsync();
             }
         }
     }

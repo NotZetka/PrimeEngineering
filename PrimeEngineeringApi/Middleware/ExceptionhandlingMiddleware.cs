@@ -26,6 +26,10 @@ namespace PrimeEngineeringApi.Middleware
                 var message = string.Join(' ', errorMessages);
                 await HandleExceptionAsync(httpContext, message, StatusCodes.Status400BadRequest);
             }
+            catch (ForbiddenException ex)
+            {
+                await HandleExceptionAsync(httpContext, ex.Message, StatusCodes.Status403Forbidden);
+            }
             catch (NotFoundException ex)
             {
                 await HandleExceptionAsync(httpContext, ex.Message, StatusCodes.Status404NotFound);
