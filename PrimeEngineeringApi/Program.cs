@@ -36,8 +36,8 @@ namespace PrimeEngineeringApi
                     };
                 });
             builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
-            builder.Services.AddScoped<ITokenService, TokenService>();
-            builder.Services.AddScoped<IUserService, UserService>();
+            builder.Services.AddServices();
+            builder.Services.AddValidatiors();
             builder.Services.AddRepositories();
             Log.Logger = new LoggerConfiguration()
                 .ReadFrom.Configuration(builder.Configuration)

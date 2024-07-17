@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using FluentValidation;
+using Newtonsoft.Json;
 using PrimeEngineeringApi.Utilities.Exceptions;
 using Serilog;
 
@@ -18,6 +19,12 @@ namespace PrimeEngineeringApi.Middleware
             try
             {
                 await _next(httpContext);
+            }
+            catch (ValidationException ex)
+            {
+                var errorMessages = ex.Errors.Select(x => $"{x.PropertyName} : {x.ErrorMessage}");
+                var message = string.Join(' ', errorMessages);
+                await HandleExceptionAsync(httpContext, message, StatusCodes.Status400BadRequest);
             }
             catch (NotFoundException ex)
             {
