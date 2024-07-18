@@ -26,6 +26,7 @@ namespace PrimeEngineeringApi.Handlers.Employees.EditTask
             if (request.Header != null) task.Header = request.Header;
             if (request.Description != null) task.Description = request.Description;
             if (request.Priority != null) task.Priority = request.Priority.Value;
+            if (request.NewDedline != null && request.NewDedline > DateTime.Now) task.DateDeadline = request.NewDedline.Value;
 
             await _employeeRepository.SaveChangesAsync();
 

@@ -24,6 +24,7 @@ namespace PrimeEngineeringApi.Handlers.Employees.MarkFinished
             if (!task.Employees.Select(x => x.Id).Contains(userId)) throw new ForbiddenException($"User does not have access to task with id: {request.TaskId}");
 
             task.Finished = true;
+            task.DateFinished = DateTime.Now;
 
             await _employeeRepository.SaveChangesAsync();
 

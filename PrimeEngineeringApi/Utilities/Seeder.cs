@@ -65,14 +65,20 @@ namespace PrimeEngineeringApi.Utilities
                     Header = "Task1",
                     Description = "Task1 description",
                     Priority = Priority.Medium,
-                    Employees = new List<Employee>() { employee2 }
+                    Employees = new List<Employee>() { employee2 },
+                    DateCreated = DateTime.Now,
+                    DateDeadline = DateTime.Now.AddDays(5),
                 });
                 employee2.Tasks.Add(new()
                 {
                     AuthorId = employee2.Id,
                     Header = "Task2",
                     Description = "Task2 description",
-                    Priority = Priority.Medium
+                    Priority = Priority.Medium,
+                    DateCreated = DateTime.Now.AddDays(-2),
+                    DateDeadline = DateTime.Now.AddDays(5),
+                    DateFinished = DateTime.Now,
+                    Finished = true,
                 });
 
                 await _context.SaveChangesAsync();

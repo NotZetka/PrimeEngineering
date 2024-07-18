@@ -10,6 +10,7 @@ namespace PrimeEngineeringApi.Handlers.Employees.EditTask
         public string? Description { get; set; }
 
         public Priority? Priority { get; set; }
+        public DateTime? NewDedline { get; set; }
 
     }
 }
