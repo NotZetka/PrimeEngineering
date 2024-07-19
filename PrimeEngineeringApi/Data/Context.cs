@@ -9,7 +9,7 @@ namespace PrimeEngineeringApi.Data
         {
         }
         public DbSet<Employee> Employees { get; set; }
-        public DbSet<Menager> Menagers { get; set; }
+        public DbSet<Manager> Managers { get; set; }
         public DbSet<EmployeeTask> Tasks { get; set; }
 
 
@@ -17,9 +17,9 @@ namespace PrimeEngineeringApi.Data
         {
             base.OnModelCreating(builder);
 
-            builder.Entity<Menager>()
+            builder.Entity<Manager>()
                 .HasMany(u => u.Employees)
-                .WithOne(e => e.Menager)
+                .WithOne(e => e.Manager)
                 .OnDelete(DeleteBehavior.Restrict);
 
             builder.Entity<Employee>()

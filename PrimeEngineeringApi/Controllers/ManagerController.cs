@@ -1,16 +1,16 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using PrimeEngineeringApi.Handlers.Menager.GetEmployeesList;
-using PrimeEngineeringApi.Handlers.Menager.GetEmployeeStatistics;
-using PrimeEngineeringApi.Handlers.Menager.GetEmployeeTasks;
+using PrimeEngineeringApi.Handlers.Manager.GetEmployeesList;
+using PrimeEngineeringApi.Handlers.Manager.GetEmployeeStatistics;
+using PrimeEngineeringApi.Handlers.Manager.GetEmployeeTasks;
 
 namespace PrimeEngineeringApi.Controllers
 {
-    [Authorize(Roles = "Menager")]
-    public class MenagerController : BaseApiController
+    [Authorize(Roles = "Manager")]
+    public class ManagerController : BaseApiController
     {
-        public MenagerController(IMediator mediator) : base(mediator)
+        public ManagerController(IMediator mediator) : base(mediator)
         {
         }
 

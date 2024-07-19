@@ -11,17 +11,17 @@ namespace PrimeEngineeringApi.Utilities
             var _userManager = app.ApplicationServices.CreateScope().ServiceProvider.GetRequiredService<UserManager<AppUser>>();
             var _context = app.ApplicationServices.CreateScope().ServiceProvider.GetRequiredService<DataContext>();
 
-            Menager menager = null;
+            Manager Manager = null;
 
-            if (await _userManager.FindByNameAsync("Menager1") == null)
+            if (await _userManager.FindByNameAsync("Manager1") == null)
             {
-                menager = new()
+                Manager = new()
                 {
-                    UserName = "Menager1",
-                    Email = "Menager@123.pl"
+                    UserName = "Manager1",
+                    Email = "Manager@123.pl"
                 };
-                var result = await _userManager.CreateAsync(menager, "Test.123");
-                await _userManager.AddToRoleAsync(menager, "Menager");
+                var result = await _userManager.CreateAsync(Manager, "Test.123");
+                await _userManager.AddToRoleAsync(Manager, "Manager");
             }
 
             Employee employee = null;
@@ -29,7 +29,7 @@ namespace PrimeEngineeringApi.Utilities
             {
                 employee = new()
                 {
-                    Menager = menager,
+                    Manager = Manager,
                     UserName = "Employee1",
                     Email = "Employee1@123.pl"
                 };
@@ -44,7 +44,7 @@ namespace PrimeEngineeringApi.Utilities
             {
                 employee2 = new()
                 {
-                    Menager = menager,
+                    Manager = Manager,
                     UserName = "Employee2",
                     Email = "Employee2@123.pl"
                 };

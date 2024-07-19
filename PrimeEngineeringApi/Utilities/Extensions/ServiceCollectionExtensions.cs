@@ -6,8 +6,8 @@ using PrimeEngineeringApi.Handlers.Employees.AddContributor;
 using PrimeEngineeringApi.Handlers.Employees.CreateTask;
 using PrimeEngineeringApi.Handlers.Employees.EditTask;
 using PrimeEngineeringApi.Handlers.Employees.MarkFinished;
-using PrimeEngineeringApi.Handlers.Menager.GetEmployeeStatistics;
-using PrimeEngineeringApi.Handlers.Menager.GetEmployeeTasks;
+using PrimeEngineeringApi.Handlers.Manager.GetEmployeeStatistics;
+using PrimeEngineeringApi.Handlers.Manager.GetEmployeeTasks;
 using PrimeEngineeringApi.Middleware;
 using PrimeEngineeringApi.Services;
 

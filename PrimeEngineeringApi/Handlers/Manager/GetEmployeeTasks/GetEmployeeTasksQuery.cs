@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace PrimeEngineeringApi.Handlers.Menager.GetEmployeeTasks
+namespace PrimeEngineeringApi.Handlers.Manager.GetEmployeeTasks
 {
     public class GetEmployeeTasksQuery : IRequest<GetEmployeeTasksQueryResult>
     {

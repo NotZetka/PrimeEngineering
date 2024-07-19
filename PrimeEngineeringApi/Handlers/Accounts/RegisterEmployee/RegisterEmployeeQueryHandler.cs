@@ -22,12 +22,12 @@ namespace PrimeEngineeringApi.Handlers.Accounts.RegisterEmployee
         public async Task<RegisterEmployeeQueryResponse> Handle(RegisterEmployeeQuery request, CancellationToken cancellationToken)
         {
             var userId = _userService.GetCurrentUserId();
-            var menager = await _accountsRepository.GetMenagerByIdAsync(userId);
-            if (menager == null) throw new NotFoundException($"Menager with id: {userId} han not been found");
+            var Manager = await _accountsRepository.GetManagerByIdAsync(userId);
+            if (Manager == null) throw new NotFoundException($"Manager with id: {userId} han not been found");
 
             var employee = new Employee()
             {
-                Menager = menager,
+                Manager = Manager,
                 Email = request.Email,
                 UserName = request.UserName,
             };

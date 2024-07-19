@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using PrimeEngineeringApi.Data;
 
-namespace PrimeEngineeringApi.Handlers.Menager.GetEmployeeStatistics
+namespace PrimeEngineeringApi.Handlers.Manager.GetEmployeeStatistics
 {
     public class GetEmployeeStatisticsQuery : IRequest<GetEmployeeStatisticsQueryResponse>
     {

@@ -5,38 +5,38 @@ using Microsoft.EntityFrameworkCore;
 using PrimeEngineeringApi.Data.Dtos;
 using System.Collections.Generic;
 
-namespace PrimeEngineeringApi.Data.Repositories.MenagerRepository
+namespace PrimeEngineeringApi.Data.Repositories.ManagerRepository
 {
-    public class MenagerRepository : AbstractRepository, IMenagerRepsitory
+    public class ManagerRepository : AbstractRepository, IManagerRepsitory
     {
         private readonly IMapper _mapper;
 
-        public MenagerRepository(DataContext context, IMapper mapper) : base(context)
+        public ManagerRepository(DataContext context, IMapper mapper) : base(context)
         {
             _mapper = mapper;
         }
 
-        public async Task<IEnumerable<EmployeeDto>> GetEmployeesForMenagerAsync(int menagerId)
+        public async Task<IEnumerable<EmployeeDto>> GetEmployeesForManagerAsync(int ManagerId)
         {
             return await _context.Employees
-                .Where(x => x.MenagerId == menagerId)
+                .Where(x => x.ManagerId == ManagerId)
                 .ProjectTo<EmployeeDto>(_mapper.ConfigurationProvider)
                 .ToListAsync();
         }
 
-        public async Task<IEnumerable<EmployeeTaskDto>> GetTasksDtosForEmployeeAsync(int menagerId, int employeeId)
+        public async Task<IEnumerable<EmployeeTaskDto>> GetTasksDtosForEmployeeAsync(int ManagerId, int employeeId)
         {
             return await _context.Employees
-                .Where(x => x.Id == employeeId && x.MenagerId == menagerId)
+                .Where(x => x.Id == employeeId && x.ManagerId == ManagerId)
                 .SelectMany(x => x.Tasks)
                 .Select(x=>_mapper.Map<EmployeeTaskDto>(x))
                 .ToListAsync();
         }
 
-        public async Task<IEnumerable<EmployeeTask>> GetTasksForEmployeeAsync(int menagerId, int employeeId)
+        public async Task<IEnumerable<EmployeeTask>> GetTasksForEmployeeAsync(int ManagerId, int employeeId)
         {
             return await _context.Employees
-                .Where(x => x.Id == employeeId && x.MenagerId == menagerId)
+                .Where(x => x.Id == employeeId && x.ManagerId == ManagerId)
                 .Select(x => x.Tasks)
                 .FirstOrDefaultAsync();
         }

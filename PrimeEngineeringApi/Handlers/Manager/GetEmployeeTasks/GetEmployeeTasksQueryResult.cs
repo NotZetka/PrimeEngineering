@@ -1,6 +1,6 @@
 ﻿using PrimeEngineeringApi.Data.Dtos;
 
-namespace PrimeEngineeringApi.Handlers.Menager.GetEmployeeTasks
+namespace PrimeEngineeringApi.Handlers.Manager.GetEmployeeTasks
 {
     public class GetEmployeeTasksQueryResult
     {

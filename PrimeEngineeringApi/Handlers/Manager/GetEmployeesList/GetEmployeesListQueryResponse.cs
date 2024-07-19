@@ -1,6 +1,6 @@
 ﻿using PrimeEngineeringApi.Data.Dtos;
 
-namespace PrimeEngineeringApi.Handlers.Menager.GetEmployeesList
+namespace PrimeEngineeringApi.Handlers.Manager.GetEmployeesList
 {
     public class GetEmployeesListQueryResponse
     {

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using PrimeEngineeringApi.Data;
 using PrimeEngineeringApi.Data.Repositories.AccountsRepository;
 using PrimeEngineeringApi.Data.Repositories.EmployeesRepository;
-using PrimeEngineeringApi.Data.Repositories.MenagerRepository;
+using PrimeEngineeringApi.Data.Repositories.ManagerRepository;
 
 namespace PrimeEngineeringApi.Utilities.Extensions
 {
@@ -23,7 +23,7 @@ namespace PrimeEngineeringApi.Utilities.Extensions
             var roleManager = app.ApplicationServices.CreateScope().ServiceProvider.GetRequiredService<RoleManager<AppUserRole>>();
             var roles = new List<AppUserRole>
             {
-                new AppUserRole{Name = "Menager"},
+                new AppUserRole{Name = "Manager"},
                 new AppUserRole{Name = "Employee"},
             };
 
@@ -49,7 +49,7 @@ namespace PrimeEngineeringApi.Utilities.Extensions
         {
             services.AddScoped<IAccountsRepository, AccountsRepository>();
             services.AddScoped<IEmployeeRepository, EmployeeRepository>();
-            services.AddScoped<IMenagerRepsitory, MenagerRepository>();
+            services.AddScoped<IManagerRepsitory, ManagerRepository>();
 
             return services;
         }

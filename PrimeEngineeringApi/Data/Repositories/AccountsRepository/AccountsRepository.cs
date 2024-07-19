@@ -8,9 +8,9 @@ namespace PrimeEngineeringApi.Data.Repositories.AccountsRepository
         {
         }
 
-        public async Task<Menager?> GetMenagerByIdAsync(int id)
+        public async Task<Manager?> GetManagerByIdAsync(int id)
         {
-            return await _context.Menagers.FirstOrDefaultAsync(x => x.Id == id);
+            return await _context.Managers.FirstOrDefaultAsync(x => x.Id == id);
         }
     }
 }

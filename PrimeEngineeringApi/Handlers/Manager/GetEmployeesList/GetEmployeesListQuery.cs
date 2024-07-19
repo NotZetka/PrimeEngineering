@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace PrimeEngineeringApi.Handlers.Menager.GetEmployeesList
+namespace PrimeEngineeringApi.Handlers.Manager.GetEmployeesList
 {
     public class GetEmployeesListQuery : IRequest<GetEmployeesListQueryResponse>
     {

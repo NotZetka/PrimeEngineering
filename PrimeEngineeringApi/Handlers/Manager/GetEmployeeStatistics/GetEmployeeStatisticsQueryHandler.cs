@@ -1,24 +1,24 @@
 ﻿using MediatR;
-using PrimeEngineeringApi.Data.Repositories.MenagerRepository;
+using PrimeEngineeringApi.Data.Repositories.ManagerRepository;
 using PrimeEngineeringApi.Services;
 
-namespace PrimeEngineeringApi.Handlers.Menager.GetEmployeeStatistics
+namespace PrimeEngineeringApi.Handlers.Manager.GetEmployeeStatistics
 {
     public class GetEmployeeStatisticsQueryHandler : IRequestHandler<GetEmployeeStatisticsQuery, GetEmployeeStatisticsQueryResponse>
     {
         private readonly IUserService _userService;
-        private readonly IMenagerRepsitory _menagerRepsitory;
+        private readonly IManagerRepsitory _ManagerRepsitory;
 
-        public GetEmployeeStatisticsQueryHandler(IUserService userService, IMenagerRepsitory menagerRepsitory)
+        public GetEmployeeStatisticsQueryHandler(IUserService userService, IManagerRepsitory ManagerRepsitory)
         {
             _userService = userService;
-            _menagerRepsitory = menagerRepsitory;
+            _ManagerRepsitory = ManagerRepsitory;
         }
         public async Task<GetEmployeeStatisticsQueryResponse> Handle(GetEmployeeStatisticsQuery request, CancellationToken cancellationToken)
         {
-            var menagerId = _userService.GetCurrentUserId();
+            var ManagerId = _userService.GetCurrentUserId();
 
-            var employeeTasks = await _menagerRepsitory.GetTasksForEmployeeAsync(menagerId, request.EmployeeId);
+            var employeeTasks = await _ManagerRepsitory.GetTasksForEmployeeAsync(ManagerId, request.EmployeeId);
 
             var tasksGrouped = employeeTasks.GroupBy(x => new { x.DateDeadline.Year, x.DateDeadline.Month }).ToList();
 

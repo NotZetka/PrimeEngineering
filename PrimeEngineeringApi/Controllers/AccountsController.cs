@@ -13,7 +13,7 @@ namespace PrimeEngineeringApi.Controllers
         }
 
         [HttpPost("Register")]
-        [Authorize(Roles = "Menager")]
+        [Authorize(Roles = "Manager")]
         public async Task<ActionResult> RegisterEmployee([FromBody] RegisterEmployeeQuery query)
         {
             await _mediator.Send(query);
@@ -22,11 +22,11 @@ namespace PrimeEngineeringApi.Controllers
         }
 
         [HttpPost("Login")]
-        public async Task<ActionResult> Login([FromBody] LoginQuery query)
+        public async Task<ActionResult<LoginQueryResponse>> Login([FromBody] LoginQuery query)
         {
             var result = await _mediator.Send(query);
 
-            return Ok(result.Token);
+            return Ok(result);
         }
     }
 }

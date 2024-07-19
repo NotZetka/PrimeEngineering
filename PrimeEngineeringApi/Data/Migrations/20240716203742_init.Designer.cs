@@ -257,19 +257,19 @@ namespace PrimeEngineeringApi.Migrations
                 {
                     b.HasBaseType("PrimeEngineeringApi.Data.AppUser");
 
-                    b.Property<int?>("MenagerId")
+                    b.Property<int?>("ManagerId")
                         .HasColumnType("int");
 
-                    b.HasIndex("MenagerId");
+                    b.HasIndex("ManagerId");
 
                     b.HasDiscriminator().HasValue("Employee");
                 });
 
-            modelBuilder.Entity("PrimeEngineeringApi.Data.Menager", b =>
+            modelBuilder.Entity("PrimeEngineeringApi.Data.Manager", b =>
                 {
                     b.HasBaseType("PrimeEngineeringApi.Data.AppUser");
 
-                    b.HasDiscriminator().HasValue("Menager");
+                    b.HasDiscriminator().HasValue("Manager");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
@@ -332,12 +332,12 @@ namespace PrimeEngineeringApi.Migrations
 
             modelBuilder.Entity("PrimeEngineeringApi.Data.Employee", b =>
                 {
-                    b.HasOne("PrimeEngineeringApi.Data.Menager", "Menager")
+                    b.HasOne("PrimeEngineeringApi.Data.Manager", "Manager")
                         .WithMany("Employees")
-                        .HasForeignKey("MenagerId")
+                        .HasForeignKey("ManagerId")
                         .OnDelete(DeleteBehavior.Restrict);
 
-                    b.Navigation("Menager");
+                    b.Navigation("Manager");
                 });
 
             modelBuilder.Entity("PrimeEngineeringApi.Data.Employee", b =>
@@ -345,7 +345,7 @@ namespace PrimeEngineeringApi.Migrations
                     b.Navigation("Tasks");
                 });
 
-            modelBuilder.Entity("PrimeEngineeringApi.Data.Menager", b =>
+            modelBuilder.Entity("PrimeEngineeringApi.Data.Manager", b =>
                 {
                     b.Navigation("Employees");
                 });

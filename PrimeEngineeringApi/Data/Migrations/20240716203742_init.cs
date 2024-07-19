@@ -33,7 +33,7 @@ namespace PrimeEngineeringApi.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Discriminator = table.Column<string>(type: "nvarchar(8)", maxLength: 8, nullable: false),
-                    MenagerId = table.Column<int>(type: "int", nullable: true),
+                    ManagerId = table.Column<int>(type: "int", nullable: true),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -53,8 +53,8 @@ namespace PrimeEngineeringApi.Migrations
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_AspNetUsers_AspNetUsers_MenagerId",
-                        column: x => x.MenagerId,
+                        name: "FK_AspNetUsers_AspNetUsers_ManagerId",
+                        column: x => x.ManagerId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
@@ -217,9 +217,9 @@ namespace PrimeEngineeringApi.Migrations
                 column: "NormalizedEmail");
 
             migrationBuilder.CreateIndex(
-                name: "IX_AspNetUsers_MenagerId",
+                name: "IX_AspNetUsers_ManagerId",
                 table: "AspNetUsers",
-                column: "MenagerId");
+                column: "ManagerId");
 
             migrationBuilder.CreateIndex(
                 name: "UserNameIndex",

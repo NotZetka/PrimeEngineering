@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace PrimeEngineeringApi.Handlers.Menager.GetEmployeeTasks
+namespace PrimeEngineeringApi.Handlers.Manager.GetEmployeeTasks
 {
     public class GetEmployeeTasksQueryValidator : AbstractValidator<GetEmployeeTasksQuery>
     {

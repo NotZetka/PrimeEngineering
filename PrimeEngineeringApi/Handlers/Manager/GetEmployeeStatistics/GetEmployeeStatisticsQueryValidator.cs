@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace PrimeEngineeringApi.Handlers.Menager.GetEmployeeStatistics
+namespace PrimeEngineeringApi.Handlers.Manager.GetEmployeeStatistics
 {
     public class GetEmployeeStatisticsQueryValidator : AbstractValidator<GetEmployeeStatisticsQuery>
     {

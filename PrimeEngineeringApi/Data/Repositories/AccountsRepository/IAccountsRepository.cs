@@ -2,6 +2,6 @@
 {
     public interface IAccountsRepository : IRepository
     {
-        public Task<Menager?> GetMenagerByIdAsync(int id);
+        public Task<Manager?> GetManagerByIdAsync(int id);
     }
 }
