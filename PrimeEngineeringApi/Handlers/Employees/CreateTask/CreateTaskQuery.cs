@@ -8,5 +8,6 @@ namespace PrimeEngineeringApi.Handlers.Employees.CreateTask
         public string Header { get; set; }
         public string Description { get; set; } = string.Empty;
         public Priority Priority { get; set; }
+        public DateTime DateDeadline { get; set; }
     }
 }

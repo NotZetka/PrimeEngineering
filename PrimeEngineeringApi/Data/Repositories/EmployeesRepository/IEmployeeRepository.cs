@@ -1,6 +1,6 @@
 ﻿using PrimeEngineeringApi.Data.Dtos;
 
-namespace PrimeEngineeringApi.Data.Repositories.Employees
+namespace PrimeEngineeringApi.Data.Repositories.EmployeesRepository
 {
     public interface IEmployeeRepository : IRepository
     {

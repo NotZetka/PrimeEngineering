@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Identity;
 using PrimeEngineeringApi.Data;
-using PrimeEngineeringApi.Data.Repositories.Accounts;
+using PrimeEngineeringApi.Data.Repositories.AccountsRepository;
 using PrimeEngineeringApi.Services;
 using PrimeEngineeringApi.Utilities.Exceptions;
 

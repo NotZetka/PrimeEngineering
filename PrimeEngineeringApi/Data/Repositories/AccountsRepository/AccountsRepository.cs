@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace PrimeEngineeringApi.Data.Repositories.Accounts
+namespace PrimeEngineeringApi.Data.Repositories.AccountsRepository
 {
     public class AccountsRepository : AbstractRepository, IAccountsRepository
     {
@@ -10,7 +10,7 @@ namespace PrimeEngineeringApi.Data.Repositories.Accounts
 
         public async Task<Menager?> GetMenagerByIdAsync(int id)
         {
-            return await _context.Menagers.FirstOrDefaultAsync(x=>x.Id == id);
+            return await _context.Menagers.FirstOrDefaultAsync(x => x.Id == id);
         }
     }
 }

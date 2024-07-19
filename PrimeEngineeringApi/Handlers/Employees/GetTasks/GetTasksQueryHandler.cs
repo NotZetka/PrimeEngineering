@@ -1,5 +1,5 @@
 ﻿using MediatR;
-using PrimeEngineeringApi.Data.Repositories.Employees;
+using PrimeEngineeringApi.Data.Repositories.EmployeesRepository;
 using PrimeEngineeringApi.Services;
 
 namespace PrimeEngineeringApi.Handlers.Employees.GetTasks

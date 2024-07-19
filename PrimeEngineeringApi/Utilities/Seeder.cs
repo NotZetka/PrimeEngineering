@@ -68,12 +68,42 @@ namespace PrimeEngineeringApi.Utilities
                     Employees = new List<Employee>() { employee2 },
                     DateCreated = DateTime.Now,
                     DateDeadline = DateTime.Now.AddDays(5),
+                }); 
+                employee.Tasks.Add(new()
+                {
+                    AuthorId = employee.Id,
+                    Header = "Task2",
+                    Description = "Task2 description",
+                    Priority = Priority.Medium,
+                    Employees = new List<Employee>() { employee2 },
+                    DateCreated = DateTime.Now,
+                    DateDeadline = DateTime.Now.AddDays(40),
+                });
+                employee.Tasks.Add(new()
+                {
+                    AuthorId = employee.Id,
+                    Header = "Task3",
+                    Description = "Task3 description",
+                    Priority = Priority.Medium,
+                    Employees = new List<Employee>() { employee2 },
+                    DateCreated = DateTime.Now,
+                    DateDeadline = DateTime.Now.AddDays(41),
+                });
+                employee.Tasks.Add(new()
+                {
+                    AuthorId = employee.Id,
+                    Header = "Task4",
+                    Description = "Task4 description",
+                    Priority = Priority.Medium,
+                    Employees = new List<Employee>() { employee2 },
+                    DateCreated = DateTime.Now,
+                    DateDeadline = DateTime.Now.AddDays(10),
                 });
                 employee2.Tasks.Add(new()
                 {
                     AuthorId = employee2.Id,
-                    Header = "Task2",
-                    Description = "Task2 description",
+                    Header = "Task5",
+                    Description = "Task5 description",
                     Priority = Priority.Medium,
                     DateCreated = DateTime.Now.AddDays(-2),
                     DateDeadline = DateTime.Now.AddDays(5),

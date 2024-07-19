@@ -1,4 +1,4 @@
-﻿namespace PrimeEngineeringApi.Data.Repositories.Accounts
+﻿namespace PrimeEngineeringApi.Data.Repositories.AccountsRepository
 {
     public interface IAccountsRepository : IRepository
     {

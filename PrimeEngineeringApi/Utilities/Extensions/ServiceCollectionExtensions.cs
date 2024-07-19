@@ -6,6 +6,8 @@ using PrimeEngineeringApi.Handlers.Employees.AddContributor;
 using PrimeEngineeringApi.Handlers.Employees.CreateTask;
 using PrimeEngineeringApi.Handlers.Employees.EditTask;
 using PrimeEngineeringApi.Handlers.Employees.MarkFinished;
+using PrimeEngineeringApi.Handlers.Menager.GetEmployeeStatistics;
+using PrimeEngineeringApi.Handlers.Menager.GetEmployeeTasks;
 using PrimeEngineeringApi.Middleware;
 using PrimeEngineeringApi.Services;
 
@@ -22,6 +24,8 @@ namespace PrimeEngineeringApi.Utilities.Extensions
             services.AddTransient<IValidator<CreateTaskQuery>, CreateTaskQueryvalidator>();
             services.AddTransient<IValidator<EditTaskQuery>, EditTaskQueryValidator>();
             services.AddTransient<IValidator<MarkFinishedQuery>, MarkFinishedQueryValidator>();
+            services.AddTransient<IValidator<GetEmployeeStatisticsQuery>, GetEmployeeStatisticsQueryValidator>();
+            services.AddTransient<IValidator<GetEmployeeTasksQuery>, GetEmployeeTasksQueryValidator>();
 
             return services;
         }

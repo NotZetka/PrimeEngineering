@@ -12,6 +12,7 @@ namespace PrimeEngineeringApi.Utilities
             CreateMap<CreateTaskQuery, EmployeeTask>();
             CreateMap<EmployeeTask, EmployeeTaskDto>()
                 .ForMember(dest => dest.Priority, opt => opt.MapFrom(src => src.Priority.ToString()));
+            CreateMap<Employee, EmployeeDto>();
         }
     }
 }

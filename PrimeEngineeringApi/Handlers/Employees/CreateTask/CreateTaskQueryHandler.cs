@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using MediatR;
 using PrimeEngineeringApi.Data;
-using PrimeEngineeringApi.Data.Repositories.Employees;
+using PrimeEngineeringApi.Data.Repositories.EmployeesRepository;
 using PrimeEngineeringApi.Services;
 
 namespace PrimeEngineeringApi.Handlers.Employees.CreateTask
