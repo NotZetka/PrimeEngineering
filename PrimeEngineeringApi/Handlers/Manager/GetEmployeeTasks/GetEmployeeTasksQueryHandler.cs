@@ -4,7 +4,7 @@ using PrimeEngineeringApi.Services;
 
 namespace PrimeEngineeringApi.Handlers.Manager.GetEmployeeTasks
 {
-    public class GetEmployeeTasksQueryHandler : IRequestHandler<GetEmployeeTasksQuery, GetEmployeeTasksQueryResult>
+    public class GetEmployeeTasksQueryHandler : IRequestHandler<GetEmployeeTasksQuery, GetEmployeeTasksQueryResponse>
     {
         private readonly IUserService _userService;
         private readonly IManagerRepsitory _ManagerRepsitory;
@@ -14,7 +14,7 @@ namespace PrimeEngineeringApi.Handlers.Manager.GetEmployeeTasks
             _userService = userService;
             _ManagerRepsitory = ManagerRepsitory;
         }
-        public async Task<GetEmployeeTasksQueryResult> Handle(GetEmployeeTasksQuery request, CancellationToken cancellationToken)
+        public async Task<GetEmployeeTasksQueryResponse> Handle(GetEmployeeTasksQuery request, CancellationToken cancellationToken)
         {
             var ManagerId = _userService.GetCurrentUserId();
 

@@ -2,7 +2,7 @@
 
 namespace PrimeEngineeringApi.Handlers.Manager.GetEmployeeTasks
 {
-    public class GetEmployeeTasksQueryResult
+    public class GetEmployeeTasksQueryResponse
     {
         public IEnumerable<EmployeeTaskDto> Tasks { get; set; }
     }

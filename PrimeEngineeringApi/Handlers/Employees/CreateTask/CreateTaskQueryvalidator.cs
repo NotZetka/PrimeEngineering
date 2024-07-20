@@ -8,7 +8,7 @@ namespace PrimeEngineeringApi.Handlers.Employees.CreateTask
         {
             RuleFor(x => x.Header).NotEmpty().NotNull();
             RuleFor(x => x.Priority).NotEmpty().NotNull();
-            RuleFor(x => x.DateDeadline).NotNull().NotEmpty().GreaterThanOrEqualTo(DateTime.Now);
+            RuleFor(x => x.DateDeadline).NotNull().NotEmpty().GreaterThanOrEqualTo(DateTime.Today);
         }
     }
 }

@@ -9,5 +9,6 @@ namespace PrimeEngineeringApi.Data.Repositories.EmployeesRepository
         public Task<IEnumerable<EmployeeTaskDto>> GetTasks(int userId);
 
         public Task<EmployeeTask> GetTask(int taskId);
+        public Task<IEnumerable<EmployeeDto>> GetAvailabileEmployeesForTask(int userId, int taskId);
     }
 }

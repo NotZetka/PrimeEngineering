@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using PrimeEngineeringApi.Handlers.Employees.AddContributor;
 using PrimeEngineeringApi.Handlers.Employees.CreateTask;
 using PrimeEngineeringApi.Handlers.Employees.EditTask;
+using PrimeEngineeringApi.Handlers.Employees.GetNoContributorsforTask;
 using PrimeEngineeringApi.Handlers.Employees.GetTasks;
 using PrimeEngineeringApi.Handlers.Employees.MarkFinished;
 
@@ -25,9 +26,19 @@ namespace PrimeEngineeringApi.Controllers
         }
 
         [HttpGet("Tasks")]
-        public async Task<ActionResult> GetTasks()
+        public async Task<ActionResult<GetTasksQueryResponse>> GetTasks()
         {
             var query = new GetTasksQuery();
+
+            var response = await _mediator.Send(query);
+
+            return Ok(response);
+        }
+
+        [HttpGet("Task/{id}")]
+        public async Task<ActionResult<GetNoContributorsforTaskQueryResponse>> GetNoContributorsforTask([FromRoute] int id)
+        {
+            var query = new GetNoContributorsforTaskQuery() { TaskId = id };
 
             var response = await _mediator.Send(query);
 

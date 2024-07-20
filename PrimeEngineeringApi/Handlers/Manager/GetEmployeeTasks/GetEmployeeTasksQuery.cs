@@ -2,7 +2,7 @@
 
 namespace PrimeEngineeringApi.Handlers.Manager.GetEmployeeTasks
 {
-    public class GetEmployeeTasksQuery : IRequest<GetEmployeeTasksQueryResult>
+    public class GetEmployeeTasksQuery : IRequest<GetEmployeeTasksQueryResponse>
     {
         public int EmployeeId { get; set; }
     }

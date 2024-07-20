@@ -25,6 +25,7 @@ namespace PrimeEngineeringApi.Handlers.Employees.CreateTask
             var userId = _userService.GetCurrentUserId();
 
             var task = _mapper.Map<EmployeeTask>(request);
+            task.DateCreated = DateTime.UtcNow;
 
             _employeeRepository.AddTask(task, userId);
 

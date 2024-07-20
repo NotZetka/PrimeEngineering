@@ -24,6 +24,22 @@ namespace PrimeEngineeringApi.Data.Repositories.EmployeesRepository
             _context.Tasks.Add(task);
         }
 
+        public async Task<IEnumerable<EmployeeDto>> GetAvailabileEmployeesForTask(int userId, int taskId)
+        {
+            var task = await _context.Tasks.Include(x=>x.Employees).FirstOrDefaultAsync(x=>x.Id == taskId);
+            if (task != null &&
+                task.Employees.Select(x => x.Id).Contains(userId))
+            {
+                return await _context.Employees
+                    .Where(x=>
+                        !x.Tasks.Select(x=>x.Id)
+                        .Contains(taskId))
+                    .Select(x=>_mapper.Map<EmployeeDto>(x))
+                    .ToListAsync();
+            }
+            return new List<EmployeeDto>();
+        }
+
         public async Task<EmployeeTask> GetTask(int taskId)
         {
             return await _context.Tasks

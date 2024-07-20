@@ -15,7 +15,7 @@ namespace PrimeEngineeringApi.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult> GetEmployeesList()
+        public async Task<ActionResult<GetEmployeesListQueryResponse>> GetEmployeesList()
         {
             var query = new GetEmployeesListQuery();
 
@@ -25,7 +25,7 @@ namespace PrimeEngineeringApi.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult> GetEmployeeTasks([FromRoute]int id)
+        public async Task<ActionResult<GetEmployeeTasksQueryResponse>> GetEmployeeTasks([FromRoute]int id)
         {
             var query = new GetEmployeeTasksQuery() { EmployeeId = id };
 
@@ -35,7 +35,7 @@ namespace PrimeEngineeringApi.Controllers
         }
 
         [HttpGet("stats/{id}")]
-        public async Task<ActionResult> GetEmployeeStatistics([FromRoute] int id)
+        public async Task<ActionResult<GetEmployeeStatisticsQueryResponse>> GetEmployeeStatistics([FromRoute] int id)
         {
             var query = new GetEmployeeStatisticsQuery() { EmployeeId = id };
 
