@@ -2,16 +2,16 @@
 {
     public abstract class AbstractRepository : IRepository
     {
-        protected readonly DataContext _context;
+        protected readonly IUnitOfWork _unitOfWork;
 
-        protected AbstractRepository(DataContext context)
+        protected AbstractRepository(IUnitOfWork unitOfWork)
         {
-            _context = context;
+            _unitOfWork = unitOfWork;
         }
 
         public async Task<int> SaveChangesAsync()
         {
-            return await _context.SaveChangesAsync();
+            return await _unitOfWork.Context.SaveChangesAsync();
         }
     }
 }

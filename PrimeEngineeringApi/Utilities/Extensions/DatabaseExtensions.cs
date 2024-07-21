@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using PrimeEngineeringApi.Data;
+using PrimeEngineeringApi.Data.Repositories;
 using PrimeEngineeringApi.Data.Repositories.AccountsRepository;
 using PrimeEngineeringApi.Data.Repositories.EmployeesRepository;
 using PrimeEngineeringApi.Data.Repositories.ManagerRepository;
@@ -47,6 +48,7 @@ namespace PrimeEngineeringApi.Utilities.Extensions
 
         public static IServiceCollection AddRepositories(this IServiceCollection services)
         {
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IAccountsRepository, AccountsRepository>();
             services.AddScoped<IEmployeeRepository, EmployeeRepository>();
             services.AddScoped<IManagerRepsitory, ManagerRepository>();
