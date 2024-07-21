@@ -1,6 +1,6 @@
 # PrimeEngineering
 ## Przegląd
-Aplikacja jest zaprojektowana do zarządzania zadaniami w organizacji. Wszystkie zapytania do API sa autoryzowane co gwarantuje, że menedżer nie ma dostepu do endpointów przeznaczonych dla pracowników i odwrotnie. Przy tworzeniu bazy zasosowlem podejście code first, przy uruchomieniu aplikacji, jesli baza danych nie istnieje, zostanie automatycznie utworzona i wypełniona danymi początkowymi, w tym dwoma pracownikami oraz menedżerem. Aby odpalić aplikację należy najpierw odpalić API w visual studio a następnie klienta.
+Aplikacja jest zaprojektowana do zarządzania zadaniami w organizacji. Wszystkie zapytania do API sa autoryzowane co gwarantuje, że menedżer nie ma dostepu do endpointów przeznaczonych dla pracowników i odwrotnie. Przy tworzeniu bazy zasosowlem podejście code first, przy uruchomieniu aplikacji, jesli baza danych nie istnieje, zostanie automatycznie utworzona i wypełniona danymi początkowymi, w tym dwoma pracownikami oraz menedżerem. Aby odpalić aplikację należy najpierw odpalić API w visual studio a następnie klienta. Pod adresem https://localhost:5001/swagger dostepna jest dokumentacja wszsytkich endpointów. Endpoint login Accounts/Login zwraca token który można wykorzystać dalej do autoryzacji i autentykacji.
 
 
 ## Dane do logowania
