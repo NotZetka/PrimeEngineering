@@ -5,7 +5,9 @@ VisualStudioVersion = 17.10.34928.147
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrimeEngineeringApi", "PrimeEngineeringApi\PrimeEngineeringApi.csproj", "{398E16B0-9AD2-4F94-A103-2912120C9818}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeEnginieringWinFormClient", "PrimeEnginieringWinFormClient\PrimeEnginieringWinFormClient.csproj", "{BEB1DF60-1742-46CD-B095-2D2A09CE865B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrimeEnginieringWinFormClient", "PrimeEnginieringWinFormClient\PrimeEnginieringWinFormClient.csproj", "{BEB1DF60-1742-46CD-B095-2D2A09CE865B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeEngineeringTests", "PrimeEngineeringTests\PrimeEngineeringTests.csproj", "{0E09D75D-9B31-4958-B138-A6B8168A8184}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{BEB1DF60-1742-46CD-B095-2D2A09CE865B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BEB1DF60-1742-46CD-B095-2D2A09CE865B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BEB1DF60-1742-46CD-B095-2D2A09CE865B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E09D75D-9B31-4958-B138-A6B8168A8184}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E09D75D-9B31-4958-B138-A6B8168A8184}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E09D75D-9B31-4958-B138-A6B8168A8184}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E09D75D-9B31-4958-B138-A6B8168A8184}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
