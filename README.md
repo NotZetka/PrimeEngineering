@@ -1,6 +1,6 @@
 # PrimeEngineering
 ## Przegląd
-Aplikacja jest zaprojektowana do zarządzania zadaniami w organizacji. Wszystkie zapytania do API sa autoryzowane co gwarantuje, że menedżer nie ma dostepu do endpointów przeznaczonych dla pracowników i odwrotnie. Przy tworzeniu bazy zasosowlem podejście code first, przy uruchomieniu aplikacji, jesli baza danych nie istnieje, zostanie automatycznie utworzona i wypełniona danymi początkowymi, w tym dwoma pracownikami oraz menedżerem. Domyślnie aplikacja jest skonfigurowana by odpalic API oraz clienda w trybie dubug przez visual studio. W innym wypadku nalezy zmienić url w pliku: PrimeEnginieringWinFormClient/Common/Static/PrimeEnvironment.cs
+Aplikacja jest zaprojektowana do zarządzania zadaniami w organizacji. Wszystkie zapytania do API sa autoryzowane co gwarantuje, że menedżer nie ma dostepu do endpointów przeznaczonych dla pracowników i odwrotnie. Przy tworzeniu bazy zasosowlem podejście code first, przy uruchomieniu aplikacji, jesli baza danych nie istnieje, zostanie automatycznie utworzona i wypełniona danymi początkowymi, w tym dwoma pracownikami oraz menedżerem. Aby odpalić aplikację należy najpierw odpalić API w visual studio a następnie klienta.
 
 
 ## Dane do logowania
